@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sw49jkv14-nodejs-gitops
+  description: This is GitOps manifest for sw49jkv14-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=sw49jkv14-nodejs
+    backstage.io/kubernetes-id: sw49jkv14-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: sw49jkv14-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:sw49jkv14-nodejs
